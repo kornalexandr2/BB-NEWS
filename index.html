@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="framework7/css/framework7.ios.min.css">
     <link rel="stylesheet" href="framework7/css/framework7.ios.colors.min.css">
     <link rel="stylesheet" href="framework7/feed/framework7.feeds.css">
+    <link rel="stylesheet" href="app.css">
   </head>
   <body>
     <div class="statusbar-overlay"></div>
@@ -26,7 +27,7 @@
               <div class="content-block-title">Новости</div>
               <div class="list-block">
 
-			      <div data-url="proxy.php?url=http://battlebrotherhood.ru/feed/" class="list-block feeds-init">
+			      <div data-url="http://battlebrotherhood.ru/feed/" class="list-block feeds-init">
       <div style="text-align:center" class="content-block-inner">
         <span class="preloader"></span>
       </div>
@@ -44,12 +45,11 @@
       <div class="toolbar tabbar tabbar-labels">
     <div class="toolbar-inner">
         <a href="#tab1" class="tab-link active">
-            <i class="ion-clipboard"></i>
+            <i class="icon news_icon"></i>
             <span class="tabbar-label">Новости</span>
         </a>
         <a href="#tab2" class="tab-link">
             <i class="icon demo-icon-2">
-                <span class="badge bg-red">1</span>
             </i>
             <span class="tabbar-label">Фото</span>
         </a>
