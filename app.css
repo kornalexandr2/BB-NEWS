@@ -1,4 +1,7 @@
 /* CSS Document */
 .news_icon {
-	background-image:url(framework7/img/ios7-paper.png);
+	background-image:url(framework7/img/ios7-paper.png) !important;
+	background-size:contain !important;
+	z-index:99;
+
 }
