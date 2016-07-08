@@ -43,25 +43,22 @@ Framework7.prototype.plugins.feeds = function (app) {
             '<ul>' +
                 '{{#each items}}' +
                     '<li>' +
-                        '<div class="item-inner">' +
-							'<a href="#" class="item-link feeds-item-link" data-index="{{@index}}">' +
-                                '<li><div class="item-content">{{title}}</div></li>' +
-								'<li><div class="item-title">{{description}}</div></li>' +
-                            '</a>' +
-						'</div>' +
-                       
+                        '<a href="#" class="item-link item-content feeds-item-link" data-index="{{@index}}">' +
+                            '<div class="item-inner">' +
+                                '<div class="item-title">{{title}}</div>' +
+                            '</div>' +
+                        '</a>' +
                     '</li>' +
                 '{{/each}}' +
             '</ul>';
         var virtualListItemTemplate = 
             '<li>' +
-                '<div class="item-inner">' +
-					'<a href="#" class="item-link feeds-item-link" data-index="{{@index}}">' +
-						'<div class="item-title">{{title}}</div>' +
-                        '<div class="item-title">{{formattedDate}}</div>' +
-                    '</a>' +
-			   '</div>' +
-               
+                '<a href="#" class="item-link item-content feeds-item-link" data-index="{{@index}}">' +
+                    '<div class="item-inner">' +
+                        '<div class="item-title">{{title}}</div>' +
+                        '<div class="item-after">{{formattedDate}}</div>' +
+                    '</div>' +
+                '</a>' +
             '</li>';
         var itemPageNavbarTemplate = 
             '<div class="navbar">' +
@@ -69,10 +66,10 @@ Framework7.prototype.plugins.feeds = function (app) {
                     '<div class="left sliding">' +
                         '<a href="#" class="back link">' +
                             '<i class="icon icon-back"></i>' +
-                            '<span class="backBtn>Назад</span>' +
+                            '<span>Назад</span>' +
                         '</a>' +
                     '</div>' +
-                    '<div class="center sliding">Новости</div>' +
+                    '<div class="center sliding">{{title}}</div>' +
                 '</div>' +
             '</div>';
 
@@ -86,10 +83,10 @@ Framework7.prototype.plugins.feeds = function (app) {
             '<div class="page-content">' +
                 (navbarLayout === 'static' ? itemPageNavbarTemplate : '') +
                 '<div class="content-block">' +
-                    '<center><a href="{{link}}" class="external" target="_blank">{{title}}</a></center><br>' +
+                    '<a href="{{link}}" class="external" target="_blank">{{title}}</a><br>' +
                     '<small>{{formattedDate}}</small>' +
                 '</div>' +
-                '<div class="content-block"><div class="content-block-inner">{{contentencoded}}</div></div>' +
+                '<div class="content-block"><div class="content-block-inner">{{description}}</div></div>' +
             '</div>' +
         '</div>';
         var itemPopupTemplate = 
@@ -100,7 +97,7 @@ Framework7.prototype.plugins.feeds = function (app) {
                         '<div class="left sliding">' +
                             '<a href="#" class="close-popup link">' +
                                 '<i class="icon icon-back"></i>' +
-                                '<span>Закрыть</span>' +
+                                '<span>Close</span>' +
                             '</a>' +
                         '</div>' +
                         '<div class="center sliding">{{title}}</div>' +
@@ -113,7 +110,7 @@ Framework7.prototype.plugins.feeds = function (app) {
                                 '<a href="{{link}}" class="external" target="_blank">{{title}}</a><br>' +
                                 '<small>{{formattedDate}}</small>' +
                             '</div>' +
-                            '<div class="content-block"><div class="content-block-inner">{{contentencoded}}</div></div>' +
+                            '<div class="content-block"><div class="content-block-inner">{{description}}</div></div>' +
                         '</div>' +
                     '</div>' +
                 '</div>' +
@@ -174,6 +171,7 @@ Framework7.prototype.plugins.feeds = function (app) {
                         title: item.children('title').text().replace('<![CDATA[', '').replace(']]>', ''),
                         link: item.children('link').text(),
                         description: item.children('description').text().replace('<![CDATA[', '').replace(']]>', ''),
+						contentencoded: item.children('contentencoded').text().replace('<![CDATA[', '').replace(']]>', ''),
                         pubDate: item.children('pubDate').text(),
                         formattedDate: f.params.formatDate(item.children('pubDate').text()),
                         guid: item.children('guid').text(),

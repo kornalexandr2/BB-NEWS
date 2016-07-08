@@ -16,3 +16,30 @@
   max-width: 100%;
   height: auto;
 }
+.item-content {
+	font-size:medium;
+	white-space:normal !important;
+	font-weight:bolder;
+	text-align:center;
+}
+.item-title {
+	white-space: normal !important;
+}
+.item-title img {
+	float:left;
+	padding-right:0.6em;	
+}
+
+.feeds-item-link {
+	display:flex;
+	width:100% !important;
+}
+
+.NewsIn_title {
+	font-size:larger;
+	width:100%;	
+}
+.NewsDate {
+	font-size:small !important;
+	
+}
