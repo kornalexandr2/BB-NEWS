@@ -9,9 +9,7 @@
 	<icon src="logo.png" />
     <access origin="*" />
 	
-    <gap:plugin name="org.apache.cordova.core.network-information" />
-    <gap:plugin name="org.apache.cordova.core.dialogs" />
-    <gap:plugin name="org.apache.cordova.core.inappbrowser" />
+
 
 	
 	
