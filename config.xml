@@ -8,7 +8,6 @@
         KiSa Studio
     </author>
 	<icon src="logo.png" />
-    <content src="index.html" />
     <access origin="*" />
 
 
