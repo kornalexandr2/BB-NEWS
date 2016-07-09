@@ -8,7 +8,7 @@
         KiSa Studio
     </author>
 	<icon src="logo.png" />
-    <content src="index.html" />
+    <content src="www/index.html" />
     <access origin="*" />
 
     <platform name="android">
