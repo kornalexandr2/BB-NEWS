@@ -7,6 +7,7 @@
     <author email="support@kisa-studio.ru" href="http://kisa-studio.ru">
         KiSa Studio
     </author>
+	<icon src="logo.png" />
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
