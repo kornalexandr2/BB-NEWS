@@ -1,14 +1,11 @@
 <widget id="com.kisastudio.bbnews" version="1.0.0">
-    <name>Боевое братство</name>
+    <name>Р‘РѕРµРІРѕРµ Р±СЂР°С‚СЃС‚РІРѕ</name>
     <description>
-        Вся жизнь общественного движения Боевое братство в вашем устройстве. Новости, статьи, фото, видео.
+        Р’СЃСЏ Р¶РёР·РЅСЊ РѕР±С‰РµСЃС‚РІРµРЅРЅРѕРіРѕ РґРІРёР¶РµРЅРёСЏ Р‘РѕРµРІРѕРµ Р±СЂР°С‚СЃС‚РІРѕ РІ РІР°С€РµРј СѓСЃС‚СЂРѕР№СЃС‚РІРµ. РќРѕРІРѕСЃС‚Рё, СЃС‚Р°С‚СЊРё, С„РѕС‚Рѕ, РІРёРґРµРѕ.
     </description>
     <author email="support@kisa-studio.ru" href="http://kisa-studio.ru">
         KiSa Studio
     </author>
 	<icon src="logo.png" />
     <access origin="*" />
-
-
-
 </widget>
