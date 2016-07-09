@@ -42,7 +42,7 @@
 				<div class="panel_content">Мы в соц. сетях</div>
 				<ul class="ss_l">
 					<li><a href="https://www.facebook.com/boewoebratstwo"><img src="soc_img/fb.png"/></a></li>
-					<li><a href="https://instagram.com/battle_brotherhood"><img src="soc_img/inst.png"/></a></li>
+					<li><a href="https://instagram.com/battle_brotherhood"  target="_blank"><img src="soc_img/inst.png"/></a></li>
 					<li><a href="http://www.youtube.com/user/battlebrotherhood"><img src="soc_img/yt.png"/></a></li>
 					<li><a href="https://vk.com/battlebrotherhood"><img src="soc_img/vk.png"/></a></li>
                  </ul>
@@ -102,6 +102,25 @@
           <div data-page="index-2" class="page">
             <div class="page-content">			  
 
+
+<div class="page-content">
+  <div class="content-block-title">Light Theme</div>
+  <div class="content-block row">
+    <div class="col-33"><a href="#" class="button pb-standalone">Standalone</a></div>
+    <div class="col-33"><a href="#" class="button pb-popup">Popup</a></div>
+    <div class="col-33"><a href="#" class="button pb-page">Page</a></div>
+  </div>
+  <div class="content-block-title">Dark Theme</div>
+  <div class="content-block row">
+    <div class="col-50"><a href="#" class="button pb-standalone-dark">Standalone</a></div>
+    <div class="col-50"><a href="#" class="button pb-popup-dark">Popup</a></div>
+  </div>
+</div> 
+
+
+			
+			
+			
                <div class="list-block">
 				<div id="placephoto" >
 
@@ -137,7 +156,7 @@
             <div class="page-content">
               <div class="content-block">
               
-              <div class="list-block">
+              <div class="list-block VideoContent">
 				<div id="placevideo" >
 
        <div style="text-align:center" class="content-block-inner">
@@ -151,8 +170,7 @@
 			  
 			  
 			</div>			  
-                 <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="BBVideo"></div>
+
     
              </div>
             </div>
@@ -171,17 +189,10 @@
             <div class="page-content">
               <div class="content-block SocPage">
 					
-					<!-- <div class="ss_b"><a href="https://www.facebook.com/boewoebratstwo">FACEBOOK</a></div>
-					<div class="ss_b"><a href="https://instagram.com/battle_brotherhood">INSTAGRAM</a></div>
-					<div class="ss_b"><a href="http://www.youtube.com/user/battlebrotherhood">YOUTUBE</a></div>
-					<div class="ss_b"><a href="https://vk.com/battlebrotherhood">ВКОНТАКТЕ</a></div>
-					<div class="ss_b"><a href="https://plus.google.com/+BattleBrotherhoodRu2014">GOOGLE+</a></div>
-					<div class="ss_b"><a href="https://twitter.com/Officer_on_Duty">TWITTER</a></div>
-					<div class="ss_b"><a href="http://www.odnoklassniki.ru/battlebrotherhood">ОДНОКЛАССНИКИ</a></div>
-					<div class="ss_b"><a href="http://www.linkedin.com/profile/view?id=340907103">LinkedIn</a></div>-->
+
                     <center>
                     <ul class="ss_l">
-					<li><a href="https://www.facebook.com/boewoebratstwo"><img src="soc_img/fb.png"/></a></li>
+					<li><a href="https://www.facebook.com/boewoebratstwo" target="_blank"><img src="soc_img/fb.png"/></a></li>
 					<li><a href="https://instagram.com/battle_brotherhood"><img src="soc_img/inst.png"/></a></li>
 					<li><a href="http://www.youtube.com/user/battlebrotherhood"><img src="soc_img/yt.png"/></a></li>
 					<li><a href="https://vk.com/battlebrotherhood"><img src="soc_img/vk.png"/></a></li>
@@ -213,6 +224,134 @@
  
     <script src="framework7/js/framework7.min.js"></script>
     <script src="framework7/feed/framework7.feeds.js"></script>
+	
+	
+	<script>
+
+var myApp = new Framework7(); 
+ 
+var $$ = Dom7;
+ 
+var mainView = myApp.addView('.view-main', {
+  dynamicNavbar: true
+});
+ 
+/*=== Default standalone ===*/
+var myPhotoBrowserStandalone = myApp.photoBrowser({
+    photos : [
+        'http://lorempixel.com/1024/1024/sports/1/',
+        'http://lorempixel.com/1024/1024/sports/2/',
+        'http://lorempixel.com/1024/1024/sports/3/',
+    ]
+});
+//Open photo browser on click
+$$('.pb-standalone').on('click', function () {
+    myPhotoBrowserStandalone.open();
+});
+ 
+/*=== Popup ===*/
+var myPhotoBrowserPopup = myApp.photoBrowser({
+    photos : [
+        'http://lorempixel.com/1024/1024/sports/1/',
+        'http://lorempixel.com/1024/1024/sports/2/',
+        'http://lorempixel.com/1024/1024/sports/3/',
+    ],
+    type: 'popup'
+});
+$$('.pb-popup').on('click', function () {
+    myPhotoBrowserPopup.open();
+});
+ 
+/*=== As Page ===*/
+var myPhotoBrowserPage = myApp.photoBrowser({
+    photos : [
+        'http://lorempixel.com/1024/1024/sports/1/',
+        'http://lorempixel.com/1024/1024/sports/2/',
+        'http://lorempixel.com/1024/1024/sports/3/',
+    ],
+    type: 'page',
+    backLinkText: 'Back'
+});
+$$('.pb-page').on('click', function () {
+    myPhotoBrowserPage.open();
+});
+ 
+/*=== Standalone Dark ===*/
+var myPhotoBrowserDark = myApp.photoBrowser({
+    photos : [
+        'http://lorempixel.com/1024/1024/sports/1/',
+        'http://lorempixel.com/1024/1024/sports/2/',
+        'http://lorempixel.com/1024/1024/sports/3/',
+    ],
+    theme: 'dark'
+});
+$$('.pb-standalone-dark').on('click', function () {
+    myPhotoBrowserDark.open();
+});
+ 
+/*=== Popup Dark ===*/
+var myPhotoBrowserPopupDark = myApp.photoBrowser({
+    photos : [
+        'http://lorempixel.com/1024/1024/sports/1/',
+        'http://lorempixel.com/1024/1024/sports/2/',
+        'http://lorempixel.com/1024/1024/sports/3/',
+    ],
+    theme: 'dark',
+    type: 'popup'
+});
+$$('.pb-popup-dark').on('click', function () {
+    myPhotoBrowserPopupDark.open();
+}); 
+ 
+/*=== With Captions ===*/
+var myPhotoBrowserPopupDark = myApp.photoBrowser({
+    photos : [
+        {
+            url: 'http://lorempixel.com/1024/1024/sports/1/',
+            caption: 'Caption 1 Text'
+        },
+        {
+            url: 'http://lorempixel.com/1024/1024/sports/2/',
+            caption: 'Second Caption Text'
+        },
+        // This one without caption
+        {
+            url: 'http://lorempixel.com/1024/1024/sports/3/',
+        },
+    ],
+    theme: 'dark',
+    type: 'standalone'
+});
+$$('.pb-standalone-captions').on('click', function () {
+    myPhotoBrowserPopupDark.open();
+});
+ 
+/*=== With Video ===*/
+var myPhotoBrowserPopupDark = myApp.photoBrowser({
+    photos : [
+        {
+            html: '<iframe src="//www.youtube.com/embed/lmc21V-zBq0?list=PLpj0FBQgLGEr3mtZ5BTwtmSwF1dkPrPRM" frameborder="0" allowfullscreen></iframe>',
+            caption: 'Woodkid - Run Boy Run (Official HD Video)'
+        },
+        {
+            url: 'http://lorempixel.com/1024/1024/sports/2/',
+            caption: 'Second Caption Text'
+        },
+        {
+            url: 'http://lorempixel.com/1024/1024/sports/3/',
+        },
+    ],
+    theme: 'dark',
+    type: 'standalone'
+});
+$$('.pb-standalone-video').on('click', function () {
+    myPhotoBrowserPopupDark.open();
+});
+
+</script>
+	
+	
+	
     <script>
       var myApp = new Framework7({
         externalLinks: 'a.external, .feeds-page .content-block a',

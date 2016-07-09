@@ -61,6 +61,7 @@ font-style: italic;
 	padding-top: 15px;
     position: relative;
     width: 55px;
+	z-index:999;
 }
 /* Right panel */
 .panel {
@@ -96,5 +97,21 @@ font-style: italic;
   border:1px;
   
   }
+  
+  .DescriptionVideo {
+	  white-space:pre-line;
+  }
+  .VideoContent {
+	  overflow:hidden;
+	  font-size:1em;
+	  
+  }
+    .VideoContent iframe {
+		width:100%;
+		height:20%;
+	  
+  }
+
+  
 
  

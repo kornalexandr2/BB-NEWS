@@ -73,6 +73,7 @@ Framework7.prototype.plugins.feeds = function (app) {
                         '</a>' +
                     '</div>' +
                     '<div class="center sliding">Новости</div>' +
+					'<div class="right"><a href="#" data-panel="right" class="open-panel"><img src="logo.png"/></a></div>' +
                 '</div>' +
             '</div>';
 
