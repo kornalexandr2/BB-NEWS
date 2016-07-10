@@ -5,7 +5,7 @@ $$.getJSON('http://battlebrotherhood.ru/api/core/get_category_posts/?slug=photo'
 	var output="<ul class='photo_content'>";
     for (var i in data.posts) {
 		
-        output+="<p><center><b><a href='"+data.posts[i].url+"' class='pb-standalone-dark'>"+data.posts[i].title+"'</b><br>";
+        output+="<p class='pb-standalone'><center><b><a href='"+data.posts[i].url+"'>"+data.posts[i].title+"'</b><br>";
          output+="<img src='"+ data.posts[i].thumbnail_images.medium.url + "'/></center></p>";
 		  
     }
