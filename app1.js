@@ -1,29 +1,3 @@
-var myApp = new Framework7(); 
-
-/*=== Standalone Dark ===*/
-var myPhotoBrowserDark = myApp.photoBrowser({
-    photos : [
-        'http://lorempixel.com/1024/1024/sports/1/',
-        'http://lorempixel.com/1024/1024/sports/2/',
-        'http://lorempixel.com/1024/1024/sports/3/',
-    ],
-    theme: 'dark', backLinkText: 'Закрыть'
-});
-
-
-$$('.pb-standalone-dark').on('click', function () {
-    myPhotoBrowserDark.open();
-	
-	$$.getJSON('http://battlebrotherhood.ru/api/core/get_category_posts/?slug=photo', function (data) {
-
-	
-});
-
-	
-});
-
-
-
 // Export selectors engine
 var $$ = Dom7;
 $$.getJSON('http://battlebrotherhood.ru/api/core/get_category_posts/?slug=photo', function (data) {
@@ -31,8 +5,8 @@ $$.getJSON('http://battlebrotherhood.ru/api/core/get_category_posts/?slug=photo'
 	var output="<ul class='photo_content'>";
     for (var i in data.posts) {
 		
-        output+="<p class='pb-standalone-dark'><center><b><a class='pb-standalone-dark' href='#'>"+data.posts[i].title+"</a></b><br>";
-         output+="<img src='"+ data.posts[i].thumbnail_images.medium.url + " ' class='pb-standalone-dark'/></center></p>";
+        output+="<p class='pb-standalone'><center><b><a href='"+data.posts[i].url+"'>"+data.posts[i].title+"'</b><br>";
+         output+="<img src='"+ data.posts[i].thumbnail_images.medium.url + "'/></center></p>";
 		  
     }
     output+="</ul>";
@@ -56,6 +30,7 @@ $$.getJSON('http://battlebrotherhood.ru/api/core/get_category_posts/?slug=photo'
 		
         output+="<p><center><b>"+data.items[i].snippet.title+"</b><br>";
 		output+="<iframe src='https://www.youtube.com/embed/" +data.items[i].snippet.resourceId.videoId+"' frameborder='0' allowfullscreen></iframe><br>";
+		output+="<p class='DescriptionVideo'>"+data.items[i].snippet.description+"</p><br>";
 
 		
     }
@@ -63,3 +38,7 @@ $$.getJSON('http://battlebrotherhood.ru/api/core/get_category_posts/?slug=photo'
     document.getElementById("placevideo").innerHTML=output;
 	
 });
+
+
+
+
