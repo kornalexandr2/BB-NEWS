@@ -28,15 +28,18 @@ $$('.pb-standalone-dark').on('click', function () {
 var $$ = Dom7;
 $$.getJSON('http://battlebrotherhood.ru/api/core/get_category_posts/?slug=photo', function (data) {
 	
-	var output="<ul class='photo_content'>";
-    for (var i in data.posts) {
-		
-        output+="<li class='pb-standalone-dark'><center><b><a class='pb-standalone-dark' href='#'>"+data.posts[i].title+"</a></b><br>";
-         output+="<img src='"+ data.posts[i].thumbnail_images.medium.url + " ' class='pb-standalone-dark'/></center></li>";
-		  
-    }
-    output+="</ul>";
-    document.getElementById("placephoto").innerHTML=output;
+/*=== Default standalone ===*/
+var myPhotoBrowserStandalone = myApp.photoBrowser({
+    photos : [
+        'http://lorempixel.com/1024/1024/sports/1/',
+        'http://lorempixel.com/1024/1024/sports/2/',
+        'http://lorempixel.com/1024/1024/sports/3/',
+    ]
+});
+//Open photo browser on click
+$$('.pb-standalone').on('click', function () {
+    myPhotoBrowserStandalone.open();
+});
 	
 });
 
