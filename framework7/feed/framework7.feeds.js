@@ -42,29 +42,31 @@ Framework7.prototype.plugins.feeds = function (app) {
         var listTemplate = 
             '<ul>' +
                 '{{#each items}}' +
-                    '<li>' +
-                        '<div class="item-inner">' +
+                '<div class="OneFeedInList">' +
+				    '<li>' +
+                  
 							'<a href="#" class="item-link feeds-item-link" data-index="{{@index}}">' +
-                                '<li><div class="item-content">{{title}}</div></li>' +
-								'<li><div class="item-title">{{description}}</div></li>' +
+                                '<li><div class="item-content feed_title">{{title}}</div></li>' +
+								'<li><div class="item-title feed_description">{{description}}</div></li>' +
                             '</a>' +
-						'</div>' +
+						
                        
                     '</li>' +
+				'</div>' +
                 '{{/each}}' +
             '</ul>';
         var virtualListItemTemplate = 
             '<li>' +
                 '<div class="item-inner">' +
 					'<a href="#" class="item-link feeds-item-link" data-index="{{@index}}">' +
-						'<div class="item-title">{{title}}</div>' +
+						'<div class="item-title feed_title">{{title}}</div>' +
                         '<div class="item-title">{{formattedDate}}</div>' +
                     '</a>' +
 			   '</div>' +
                
             '</li>';
         var itemPageNavbarTemplate = 
-            '<div class="navbar">' +
+
                 '<div class="navbar-inner">' +
                     '<div class="left sliding">' +
                         '<a href="#" class="back link">' +
@@ -74,23 +76,22 @@ Framework7.prototype.plugins.feeds = function (app) {
                     '</div>' +
                     '<div class="center sliding">Новости</div>' +
 					'<div class="right"><a href="#" data-panel="right" class="open-panel"><img src="logo.png"/></a></div>' +
-                '</div>' +
-            '</div>';
+                '</div>';
 
         var navbarLayout = 'static';
         if (f.container.parents('.navbar-fixed').length > 0) navbarLayout = 'fixed';
         if (f.container.parents('.navbar-through').length > 0) navbarLayout = 'through';
         var itemPageTemplate = 
-        (navbarLayout === 'through' ? itemPageNavbarTemplate : '') +
-        '<div class="page feeds-page ' + (navbarLayout === 'fixed' ? 'navbar-fixed' : '') + '" data-page="feeds-page-{{index}}">' +
-            (navbarLayout === 'fixed' ? itemPageNavbarTemplate : '') +
+         (navbarLayout === 'through' ? itemPageNavbarTemplate : '') +
+    '<div class="page feeds-page ' + (navbarLayout === 'fixed' ? 'navbar-fixed' : '') + '" data-page="feeds-page-{{index}}">' +
+ (navbarLayout === 'fixed' ? itemPageNavbarTemplate : '') +
             '<div class="page-content">' +
-                (navbarLayout === 'static' ? itemPageNavbarTemplate : '') +
-                '<div class="content-block">' +
-                    '<center><a href="{{link}}" class="external" target="_blank">{{title}}</a></center><br>' +
+             (navbarLayout === 'static' ? itemPageNavbarTemplate : '') + 
+                '<div class="content-block feed_content_title">' +
+                    '<center><a href="{{link}}" class="external feed_title" target="_blank">{{title}}</a></center><br>' +
                     '<small>{{formattedDate}}</small>' +
                 '</div>' +
-                '<div class="content-block"><div class="content-block-inner">{{contentencoded}}</div></div>' +
+                '<div class="content-block feed_content"><div class="content-block-inner feed_description">{{contentencoded}}</div></div>' +
             '</div>' +
         '</div>';
         var itemPopupTemplate = 
@@ -114,7 +115,7 @@ Framework7.prototype.plugins.feeds = function (app) {
                                 '<a href="{{link}}" class="external" target="_blank">{{title}}</a><br>' +
                                 '<small>{{formattedDate}}</small>' +
                             '</div>' +
-                            '<div class="content-block"><div class="content-block-inner">{{contentencoded}}</div></div>' +
+                            '<div class="content-block"><div class="content-block-inner ">{{contentencoded}}</div></div>' +
                         '</div>' +
                     '</div>' +
                 '</div>' +
@@ -157,9 +158,9 @@ Framework7.prototype.plugins.feeds = function (app) {
                 f.data = {
                     title: channel.children('title').text(),
                     link: channel.children('link').text(),
-                    description: channel.children('description').text().replace('<![CDATA[', '').replace(']]>', ''),
+                    description: channel.children('description').text().replace('<![CDATA[', '').replace(']]>', '').split('The post')[0],
                     copyright: channel.children('copyright').text(),
-                    image: {
+	                    image: {
                         url: channel.children('image').children('url').text(),
                         title: channel.children('image').children('title').text(),
                         link: channel.children('image').children('link').text(),
@@ -174,7 +175,7 @@ Framework7.prototype.plugins.feeds = function (app) {
                     var itemData = {
                         title: item.children('title').text().replace('<![CDATA[', '').replace(']]>', ''),
                         link: item.children('link').text(),
-                        description: item.children('description').text().replace('<![CDATA[', '').replace(']]>', ''),
+                        description: item.children('description').text().replace('<![CDATA[', '').replace(']]>', '').split('The post')[0],
                         pubDate: item.children('pubDate').text(),
                         formattedDate: f.params.formatDate(item.children('pubDate').text()),
                         guid: item.children('guid').text(),
@@ -187,7 +188,7 @@ Framework7.prototype.plugins.feeds = function (app) {
                                 var fieldAttr = f.params.customItemFields[i].split('||')[1];
                                 if (this.nodeName === fieldName) {
                                     if (fieldAttr) itemData[fieldName.replace(/:/g, '')] = this.getAttribute(fieldAttr);
-                                    else itemData[fieldName.replace(/:/g, '')] = $(this).text().replace('<![CDATA[', '').replace(']]>', '');
+                                    else itemData[fieldName.replace(/:/g, '')] = $(this).text().replace('<![CDATA[', '').replace(']]>', '').split('The post')[0];
                                 }
                             }
                         });

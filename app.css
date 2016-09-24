@@ -1,4 +1,41 @@
+
 /* Your app custom files in this file */
+
+/*Импорт шрифтов*/
+@font-face {
+   	 font-family: Capture it; /* Имя шрифта */
+    src:url(fonts/capture-it.ttf); /* Путь к файлу со шрифтом */
+	src:url(fonts/capture-it.woff); /* Путь к файлу со шрифтом */
+}
+@font-face {
+	 font-family: Flamme; /* Имя шрифта */
+    src:url(fonts/1-flamme-let-plain10.ttf);/* Путь к файлу со шрифтом */
+	src:url(fonts/1-flamme-let-plain.woff); /* Путь к файлу со шрифтом */
+	 
+}
+@font-face {
+	  font-family: Raleway Regular; /* Имя шрифта */
+    src:url(fonts/raleway-regular.woff); /* Путь к файлу со шрифтом */
+	src:url(fonts/raleway-regular.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+		font-family: a_Stamper Bold; /* Имя шрифта */
+    src:url(fonts/1-flamme-let-plain10.ttf); /* Путь к файлу со шрифтом */
+	src:url(fonts/a_stamper-bold.woff); /* Путь к файлу со шрифтом */
+ }
+ 
+ /*Оформление приложения*/
+
+.sliding {
+	font-family: 'a_Stamper Bold', arial;
+	text-shadow: 1px 1px 1px #aaa;
+}
+
+
+.page {
+    background-color: #e0eaff !important;
+}
+
 /* Tab bar icons */
 i.tabbar-demo-icon-1 {
   width: 30px;
@@ -42,26 +79,17 @@ i.tabbar-demo-icon-9 {
   background-image: url(framework7/img/ios7-film_act.png);
 }
 
-/* News from social*/
-
-.soc_content {
- list-style-type: none;
-}
-.soc_title {
-font-size: 18px;
-font-style: italic;
-}
-.SocPage {
-	margin:0;
-} 
 /* end */
 .nv_up {
 	background-color:#38696D !important;
 	color: white !important;
+	background-image:url(app_bg.jpg) !important;
 }
 .nv_down {
 	background-color:#38696D !important;
-	color: white !important;
+	background-image:url(app_bg.jpg) !important;
+	/*color: white !important;*/
+	text-shadow:1px 1px 1px #aaa;
 }
 .nv_down a{
 	color: white !important;
@@ -72,10 +100,50 @@ font-style: italic;
     width: 55px;
 	z-index:999;
 }
-/* Right panel */
-.panel {
-	background-color:#1E393B !important;
+.left img {
+	padding-top:5px;
+    position: relative;
+    width: 30px;
 }
+
+.OneFeedInList {
+	background-color: #e0eaff;
+	border-top:#365673 solid;
+	padding-top:0.85em;
+	padding:0.1em;
+}
+.OneFeedInList a {
+	color:rgba(6,0,87,1.00) !important;
+}
+.OneFeedInList {
+	color:rgba(6,0,87,1.00) !important;
+}
+.refresh {
+	width:100%;
+}
+
+/* Right panel */
+.content-block {
+}
+.panel-bg {
+	background-image:url(panel_bg.jpg) !important;
+	border-left:0.5em rgba(6,0,87,0.20);
+	border-left-style:solid;
+	background-color:#1E393B !important;
+	color: white !important;
+	margin-top:0;
+	margin-bottom:0;
+}
+.panelText {
+	color:white !important;
+	font-family: 'Flamme', arial;
+	font-size:1.7em;
+	line-height:1em;
+	text-shadow: 1px 1px 1px #aaa;
+	margin-top:5px;
+}
+
+
 
 .panel_content {
 	border-bottom:rgba(210,210,210,1.00) 1px solid;
@@ -117,9 +185,40 @@ font-style: italic;
   }
     .VideoContent iframe {
 		width:100%;
-		height:20%;
+		height:auto;
+		margin:5px auto 10px;
 	  
   }
+  
+.feed_content_title a{
+	color:black !important;
+}
+.feed_content {
+	background-color:#BADBE7 !important;
+}
+.content-block-inner {
+	background-color: none;	
+}
+.MadeBy {
+	display:inline-block;
+	font-size:7px;
+	padding-top:3.5em;
+	}
+.MadeBy a {
+	color:rgba(255,255,255,0.50) !important;
+	}
+		
+.MadeBy img{
+	height:14px;
+	opacity:0.6;
+	}
+.MadeByOverlay {
+	position:absolute;
+	background-color:rgba(0,0,0,0.40);
+	width:100%;
+	height:100%;
+	display:block;
+}
 
   
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
@@ -11,10 +11,9 @@
     <link rel="stylesheet" href="framework7/feed/framework7.feeds.css">
 
     <link rel="stylesheet" href="app.css">
-	
  	
   </head>
-  <body>
+  <body class="theme-white">
                  
     <!-- Status bar overlay for fullscreen mode-->
     <div class="statusbar-overlay"></div>
@@ -30,9 +29,9 @@
     </div>
     <!-- Right panel with cover effect-->
     <div class="panel panel-right panel-cover">
-      <div class="content-block">
+      <div class="content-block panel-bg">
       	<center>		<img src="logo.png" alt="Боевое Братство" style="width:200px"/>
-        <p>Боевое Братство – это родство тех,
+        <p class="panelText">Боевое Братство – это родство тех,
 кто сражался рядом плечом к плечу,
 прикрывал собою товарищей,
 родство тех, кто погиб,
@@ -41,7 +40,7 @@
 				<div class="panel_content">Мы в соц. сетях</div>
 				<ul class="ss_l">
 					<li><a class="external link" target="_blank" href="http://www.facebook.com/boewoebratstwo/" ><img src="soc_img/fb.png"/></a></li>
-					<li><a class="external link" target="_blank" href="https://instagram.com/battle_brotherhood"  target="_blank"><img src="soc_img/inst.png"/></a></li>
+					<li><a class="external link" target="_blank" href="https://instagram.com/battle_brotherhood"><img src="soc_img/inst.png"/></a></li>
 					<li><a class="external link" target="_blank" href="http://www.youtube.com/user/battlebrotherhood"><img src="soc_img/yt.png"/></a></li>
 					<li><a class="external link" target="_blank" href="https://vk.com/battlebrotherhood"><img src="soc_img/vk.png"/></a></li>
                  </ul>
@@ -50,8 +49,11 @@
 					<li><a class="external link" target="_blank" href="https://twitter.com/Officer_on_Duty"><img src="soc_img/tt.png"/></a></li>
 					<li><a class="external link" target="_blank" href="http://www.odnoklassniki.ru/battlebrotherhood"><img src="soc_img/ok.png"/></a></li>
 					<li><a class="external link" target="_blank" href="http://www.linkedin.com/profile/view?id=340907103"><img src="soc_img/in.png"/></a></li>
-                    </ul></center>
-
+                    </ul>
+                  <div class="MadeBy">
+                  <a class="external link" target="_blank" href="http://kisa-studio.ru"><i>made by </i><img src="logo_kisa.png"/></a>
+                  </div>
+</center>
       </div>
     </div>
     <!-- Views, and they are tabs-->
@@ -60,9 +62,10 @@
     
       <!-- Your first view, it is also a .tab and should have "active" class to make it visible by default-->
       <div id="view-1" class="view view-main tab active">
-        <div class="navbar nv_up">
+        <div class="navbar nv_up no-border">
           <div class="navbar-inner">
-            <div class="center sliding">Новости</div>
+          <div class="left"><a href="javascript:window.location.reload(true)"><img class="refresh" src="framework7/img/refresh_white.png"/></a></div>
+            <div class="center sliding"><b>Новости</b></div>
             <div class="right"><a href="#" data-panel="right" class="open-panel"><img src="logo.png"/></a></div>
           </div>
         </div>
@@ -72,63 +75,57 @@
           <div data-page="index-1" class="page">
             <!-- Scrollable page content-->
             <div class="page-content">
-              <div class="content-block">
-               <div class="list-block">
+			  
+                  <!--  <div class="load-result"></div> -->
 
 			      <div class="list-block feeds-init">
       <div style="text-align:center" class="content-block-inner">
-        <span class="preloader"></span>
+        <span class="preloader preloader"></span>
       </div>
     </div>
 			  
-              </div>
-              
-              </div>
             </div>
           </div>
         </div>
       </div>
+	  
+	  
+	  
       <!-- Second view (for second wrap)-->
-      <div id="view-2" class="view-main view tab">
+<div id="view-2" class="view-main view tab">
         <!-- We can make with view with navigation, let's add Top Navbar-->
-     <div class="navbar nv_up">
-          <div class="navbar-inner">
+    <div class="navbar nv_up no-border">
+		<div class="navbar-inner">
+         	<div class="left"><a href="#"><img class="refresh" src="framework7/img/refresh_white.png"/></a></div>
             <div class="center sliding">Фото</div>
-<div class="right"><a href="#" data-panel="right" class="open-panel"><img src="logo.png"/></a></div>
-          </div>
-        </div>
-        <div class="pages navbar-through">
-          <div data-page="index-2" class="page">
-            <div class="page-content">			  
-
-
-
-
-  <div class="content-block-title">Dark Theme</div>
-  <div class="content-block row">
-    <div class="col-50"><a href="#" class="button pb-standalone-dark">Standalone</a></div>
-  </div>
-
-  
-
-			
-			
-			<div class="list-block">
-					<div id="placephoto" class="pb-standalone-dark">
-							<div style="text-align:center" class="content-block-inner">
-									<span class="preloader"></span>
-							</div>
-					</div>
-			</div>			  
+			<div class="right"><a href="#" data-panel="right" class="open-panel"><img src="logo.png"/></a></div>
 		</div>
 	</div>
+	<div class="pages">
+		<div data-page="index-2" class="page">
+			<div class="page-content">	
+			
+				<div id="placephoto" class="list-block">
+					<div style="text-align:center" class="content-block-inner">
+                         <!-- Preloader -->
+  <div class="infinite-scroll-preloader">
+    <div class="preloader preloader"></div>
+  </div>
+					</div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div> 
 
 
-</div> 
-      </div>
+
+
+
       <div id="view-3" class="view tab">
-       <div class="navbar nv_up">
+       <div class="navbar nv_up no-border">
           <div class="navbar-inner">
+            <div class="left"><a href="#"><img class="refresh" src="framework7/img/refresh_white.png"/></a></div>
             <div class="center sliding">Видео</div>
 <div class="right"><a href="#" data-panel="right" class="open-panel"><img src="logo.png"/></a></div>
             </div>
@@ -136,22 +133,14 @@
         <div class="pages">
           <div data-page="index-3" class="page">
             <div class="page-content">
-              <div class="content-block">
-              
-              <div class="list-block VideoContent">
-				<div id="placevideo" >
+          
+
+
+              <div class="list-block VideoContent" id="placevideo" >
 
        <div style="text-align:center" class="content-block-inner">
-        <span class="preloader"></span>
-      </div>
-    
-    </div>
-			  
-              
-			  
-			  
-			  
-			</div>			  
+        <span class="preloader preloader"></span>
+      </div>  
 
     
              </div>
@@ -162,10 +151,11 @@
       <div id="view-4" class="view tab">
         <div class="pages navbar-fixed">
           <div data-page="index-4" class="page">
-            <div class="navbar nv_up">
+            <div class="navbar nv_up no-border">
           <div class="navbar-inner">
-                <div class="center">Мы в соцсетях</div>
- <div class="right"><a href="#" data-panel="right" class="open-panel"><img src="logo.png"/></a></div>
+           		<div class="left"><a href="#"><img class="refresh" src="framework7/img/refresh_white.png"/></a></div>
+                <div class="center sliding">Мы в соцсетях</div>
+				<div class="right"><a href="#" data-panel="right" class="open-panel"><img src="logo.png"/></a></div>
               </div>
             </div>
             <div class="page-content">
@@ -174,7 +164,7 @@
 
                     <center>
                     <ul class="ss_l">
-					<li><a class="external link" target="_blank" href="https://www.facebook.com/boewoebratstwo" target="_blank"><img src="soc_img/fb.png"/></a></li>
+					<li><a class="external link" target="_blank" href="https://www.facebook.com/boewoebratstwo"><img src="soc_img/fb.png"/></a></li>
 					<li><a class="external link" target="_blank" href="https://instagram.com/battle_brotherhood"><img src="soc_img/inst.png"/></a></li>
 					<li><a class="external link" target="_blank" href="http://www.youtube.com/user/battlebrotherhood"><img src="soc_img/yt.png"/></a></li>
 					<li><a class="external link" target="_blank" href="https://vk.com/battlebrotherhood"><img src="soc_img/vk.png"/></a></li>
@@ -209,39 +199,7 @@
     
 	
 	
-	<script>
 
-var myApp = new Framework7(); 
- 
-var $$ = Dom7;
- 
-var mainView = myApp.addView('.view-main', {
-  dynamicNavbar: true
-});
- 
-/*=== Standalone Dark ===*/
-var myPhotoBrowserDark = myApp.photoBrowser({
-    photos : [
-        'http://lorempixel.com/1024/1024/sports/1/',
-        'http://lorempixel.com/1024/1024/sports/2/',
-        'http://lorempixel.com/1024/1024/sports/3/',
-    ],
-    theme: 'dark', backLinkText: 'Закрыть'
-});
-$$('.pb-standalone-dark').on('click', function () {
-    myPhotoBrowserDark.open();
-	
-	$$.getJSON('http://battlebrotherhood.ru/api/core/get_category_posts/?slug=photo', function (data) {
-
-	
-});
-
-	
-});
- 
-
-
-</script>
 	
 	
 	
@@ -263,13 +221,6 @@ var myFeed = myApp.feeds('.feeds-init', {
 });
 </script>
 
-<script>
-var myFeed = myApp.feeds('.feeds-init1', {
-  url: 'http://battlebrotherhood.ru/category/photo/feed/?fsk=574c4694cbd8d',
-  openIn: 'popup',
-  customItemFields: ['content:encoded']
-});
-</script>
 	
 	<script src="app.js"></script>
 	

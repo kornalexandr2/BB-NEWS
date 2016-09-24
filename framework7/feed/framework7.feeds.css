@@ -13,18 +13,16 @@
  * Released on: August 22, 2015
  */
 .feeds-page .content-block img {
-  max-width: 100%;
+  max-width: 100% !important;
   height: auto;  
 }
 .content-block-inner {
 	text-align:justify;
+	max-width: 100% !important;
 }	
 
 .external {
 	font-size:1.4em;
-}
-.back {
-	color:white;
 }
 
 .item-content {
@@ -36,13 +34,32 @@
 .item-title {
 	white-space: normal !important;
 	text-align:justify;
+	font-size:small;
+	padding: 0px 5px;
+}
+.feed_title {
+	font-family: 'Capture it', arial;
+	text-shadow: 3px 3px 3px #aaa;
+	font-size: large;
+	width: 100%;
+	padding: 0.3em;
+	margin:0.1em;
+}
+.feed_description {
+	-moz-hyphens:auto;
+	-webkit-hyphens:auto;
+	-ms-hyphens:auto;
+	background-color: #e0eaff;
+	font-family: 'Raleway Regular', arial;
 }
 .item-title img {
-	float:left;
-	padding-right:0.6em;
-	width:100%;
-	height:auto;
-	max-width:360px;	
+	display:block;
+	margin:5px auto 10px;
+    height: auto;
+    max-width: 480px;
+	padding: 10px auto;	
+	width: 100%;
+	align-content:center;
 }
 
 .feeds-item-link {
@@ -57,4 +74,11 @@
 .NewsDate {
 	font-size:small !important;
 	
+}
+
+.wp-caption {
+	max-width:100%;
+}
+.page-content {
+	padding-top:44px !important;
 }
