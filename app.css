@@ -3,9 +3,12 @@
 
 /*Импорт шрифтов*/
 @font-face {
-   	 font-family: Capture it; /* Имя шрифта */
-    src:url(fonts/capture-it.ttf); /* Путь к файлу со шрифтом */
-	src:url(fonts/capture-it.woff); /* Путь к файлу со шрифтом */
+	font-family: Buccaner_Cyr_Reg; /* Имя шрифта */
+    src:url(fonts/Buccaner_Cyr_Reg.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+	font-family: Romul; /* Имя шрифта */
+    src:url(fonts/Romul.ttf); /* Путь к файлу со шрифтом */
 }
 @font-face {
 	 font-family: Flamme; /* Имя шрифта */
@@ -28,7 +31,7 @@
 
 .sliding {
 	font-family: 'a_Stamper Bold', arial;
-	text-shadow: 1px 1px 1px #aaa;
+	/*text-shadow: 1px 1px 1px #aaa;*/
 }
 
 
@@ -81,13 +84,13 @@ i.tabbar-demo-icon-9 {
 
 /* end */
 .nv_up {
-	background-color:#38696D !important;
+	background-color:#568098 !important;
 	color: white !important;
-	background-image:url(app_bg.jpg) !important;
+	/*background-image:url(app_bg.jpg) !important;*/
 }
 .nv_down {
-	background-color:#38696D !important;
-	background-image:url(app_bg.jpg) !important;
+	background-color:#568098 !important;
+	/*background-image:url(app_bg.jpg) !important;*/
 	/*color: white !important;*/
 	text-shadow:1px 1px 1px #aaa;
 }
@@ -123,6 +126,9 @@ i.tabbar-demo-icon-9 {
 }
 
 /* Right panel */
+.panel {
+	background-color: #406b7e !important;
+}
 .content-block {
 }
 .panel-bg {
