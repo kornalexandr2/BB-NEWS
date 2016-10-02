@@ -28,12 +28,14 @@
  }
  
  /*Оформление приложения*/
+ body {
+	 background-color:black !important;
+ }
 
 .sliding {
 	font-family: 'a_Stamper Bold', arial;
 	/*text-shadow: 1px 1px 1px #aaa;*/
 }
-
 
 .page {
     background-color: #e0eaff !important;
