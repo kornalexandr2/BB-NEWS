@@ -1,4 +1,8 @@
-<widget id="com.kisastudio.bbnews" version="1.0.0">
+<widget id="com.kisastudio.bbnews" 
+version="1.0.3"
+android-versionCode="3"
+ios-CFBundleVersion="1.0.3">
+
     <name>Боевое братство</name>
     <description>
         Вся жизнь общественного движения Боевое братство в вашем устройстве. Новости, статьи, фото, видео.
