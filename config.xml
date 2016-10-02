@@ -58,6 +58,15 @@
         <splash src="res/screen/android/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi" />
     </platform>
 
+
+	
+<preference name="AllowInlineMediaPlayback" value="true" />
+<preference name="MediaPlaybackRequiresUserAction" value="false" />   
+<allow-navigation href="*youtube*" />
+<allow-navigation href="*ytimg*" />
+	
+	
+	
     <platform name="ios">
         <icon src="res/icon/ios/icon.png" platform="ios" width="57" height="57" />
         <icon src="res/icon/ios/icon@2x.png" platform="ios" width="114" height="114" />
