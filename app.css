@@ -3,12 +3,22 @@
 
 /*Импорт шрифтов*/
 @font-face {
-	font-family: Buccaner_Cyr_Reg; /* Имя шрифта */
-    src:url(fonts/Buccaner_Cyr_Reg.ttf); /* Путь к файлу со шрифтом */
+    font-family: NeoSansProBold;
+    src: url("fonts/NeoSansProBold.eot");
+    src: url("fonts/NeoSansProBold.eot?#iefix")format("embedded-opentype"),
+    url("fonts/NeoSansProBold.woff") format("woff"),
+    url("fonts/NeoSansProBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
 }
 @font-face {
-	font-family: Romul; /* Имя шрифта */
-    src:url(fonts/Romul.ttf); /* Путь к файлу со шрифтом */
+    font-family: OrpheusRegular;
+    src: url("fonts/OrpheusRegular.eot");
+    src: url("fonts/OrpheusRegular.eot?#iefix")format("embedded-opentype"),
+    url("fonts/OrpheusRegular.woff") format("woff"),
+    url("fonts/OrpheusRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
 }
 @font-face {
 	 font-family: Flamme; /* Имя шрифта */
@@ -21,19 +31,15 @@
     src:url(fonts/raleway-regular.woff); /* Путь к файлу со шрифтом */
 	src:url(fonts/raleway-regular.ttf); /* Путь к файлу со шрифтом */
 }
-@font-face {
-		font-family: a_Stamper Bold; /* Имя шрифта */
-    src:url(fonts/1-flamme-let-plain10.ttf); /* Путь к файлу со шрифтом */
-	src:url(fonts/a_stamper-bold.woff); /* Путь к файлу со шрифтом */
- }
  
  /*Оформление приложения*/
- body {
-	 background-color:black !important;
- }
+.statusbar-overlay {
+    background: #4B708F !important;
+}
 
 .sliding {
-	font-family: 'a_Stamper Bold', arial;
+	font-family: 'OrpheusRegular', arial;
+	
 	/*text-shadow: 1px 1px 1px #aaa;*/
 }
 
@@ -124,7 +130,7 @@ i.tabbar-demo-icon-9 {
 	color:rgba(6,0,87,1.00) !important;
 }
 .refresh {
-	width:100%;
+	width:25px !important;
 }
 
 /* Right panel */
