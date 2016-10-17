@@ -129,6 +129,9 @@ i.tabbar-demo-icon-9 {
 .OneFeedInList {
 	color:rgba(6,0,87,1.00) !important;
 }
+embed {
+	margin:0 7px;
+}
 .refresh {
 	width:25px !important;
 }

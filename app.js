@@ -68,7 +68,7 @@ console.log (phots);
     for (var i in data.items) {
 		output+="<div class='OneFeedInList'>";
         output+="<p><center><span class='feed_title'><b >"+data.items[i].snippet.title+"</b></span><br>";
-		output+="<iframe src='https://www.youtube.com/embed/" +data.items[i].snippet.resourceId.videoId+"' frameborder='0' allowfullscreen></iframe><br>";
+		output+="<embed src='https://www.youtube.com/embed/" +data.items[i].snippet.resourceId.videoId+"?showinfo=0'/><br>";
 		output+="</div>";
 		
     }
