@@ -14,8 +14,25 @@ $$.getJSON('http://battlebrotherhood.ru/api/core/get_category_posts/?id=2/?count
 
     }
 	
-    output+="</ul>";
+    output+="</ul><p><a href='#' class='button button-fill color-blue NextClass'>далее</a></p>";
     document.getElementById("placephoto").innerHTML=output;
+
+$$(".NextClass").click(function () {
+	$$.getJSON('http://battlebrotherhood.ru/api/core/get_category_posts/?id=2/?count=15?page=2', function (data) {
+
+	var output="<ul class='photo_content list-block' id='myid'>";
+    for (var k in data.posts) {
+
+        koutput+="<li class='OneFeedInList' id="+data.posts[i].id+"><center><b><a class='pb-standalone-dark feed_title' href='#'>"+data.posts[i].title+"</b><br>";
+        koutput+="<img src='"+ data.posts[i].thumbnail_images.medium.url + " ' /></center></a></li>";
+
+
+    }
+	
+   koutput+="</ul><p><a href='#' class='button button-fill color-blue NextClass'>далее</a></p>";
+    $$('.list-block ul').append(koutput);
+})
+});
 
 $$("#myid li").click(function() {
   
@@ -77,6 +94,7 @@ console.log (phots);
 	
 });
 
+	
 $$(document).on('refresh','.pull-to-refresh-content',function(e){
   setTimeout(function(){
     myApp.pullToRefreshDone();
@@ -85,69 +103,13 @@ $$(document).on('refresh','.pull-to-refresh-content',function(e){
 });
 
 
-/* Inf scroll */
 
-//http://battlebrotherhood.ru/feed/?paged=3
-
-
-// Loading flag
-var loading = false;
- 
-// Last loaded index
-var lastIndex = 1;
- 
-// Max items to load
-var maxItems = 50;
- 
-// Append items per load
-var itemsPerLoad = 1;
-
-
-// Attach 'infinite' event handler
-$$('.infinite-scroll').on('infinite', function () {
- 
-  // Exit, if loading in progress
-  if (loading) return;
- 
-  // Set loading flag
-  loading = true;
- 
-  // Emulate 1s loading
-  setTimeout(function () {
-    // Reset loading flag
-    loading = false;
- 
-    if (lastIndex >= maxItems) {
-      // Nothing more to load, detach infinite scroll events to prevent unnecessary loadings
-      myApp.detachInfiniteScroll($$('.infinite-scroll'));
-      // Remove preloader
-      $$('.infinite-scroll-preloader').remove();
-      return;
-    }
- 
-    // Generate new items HTML
-    var html = '';
-	lastIndex ++; 
-   
- for (var i = lastIndex + 1; i <= lastIndex + itemsPerLoad; i++) {
-	 console.log (i);
- html +=    '{{#each items}}' +
-                '<div class="OneFeedInList">' +
-				    '<li>' +
-                  
-							'<a href="#" class="item-link feeds-item-link" data-index="{{@index}}">' +
-                                '<li><div class="item-content feed_title">{{title}}</div></li>' +
-								'<li><div class="item-title feed_description">{{description}}</div></li>' +
-                            '</a>' +
-						
-                       
-                    '</li>' +
-				'</div>' +
-                '{{/each}}';
-    }
-	 // Append new items
-    $$('.list-block ul').append(html);
-    // Update last loaded index
-	lastIndex = $$('.list-block li').length;
-  }, 1000);
-});
+//social links
+window.addEventListener('load', function () {
+	$$(document).on('click', 'a[target="_blank"]', function (e) {
+	e.preventDefault();
+	var url = this.href;
+	window.open(url, "_system");
+	});
+	//}	
+	}, false);
