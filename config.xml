@@ -22,6 +22,14 @@ ios-CFBundleVersion="1.0.3">
 	
 	<preference name="loadUrlTimeoutValue" value="700000" />
 	
+	
+
+	
+<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
+<plugin name="InAppBrowser" value="CDVInAppBrowser" /> 
+<access origin="*" browserOnly="true"/>
+	
+	
     <platform name="android">
         <preference name="android-minSdkVersion" value="14" />
         <allow-intent href="market:*" />

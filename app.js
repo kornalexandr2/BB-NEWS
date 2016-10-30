@@ -1,5 +1,12 @@
 var myApp = new Framework7(); 
 
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    window.open = cordova.InAppBrowser.open;
+}
+
+
+
 // Export selectors engine
 var $$ = Dom7;
 
