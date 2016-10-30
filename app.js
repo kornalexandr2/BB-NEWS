@@ -1,14 +1,28 @@
 var myApp = new Framework7(); 
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    window.open = cordova.InAppBrowser.open;
-}
+
 
 
 
 // Export selectors engine
 var $$ = Dom7;
+
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    window.open = cordova.InAppBrowser.open;
+}
+
+//social links
+window.addEventListener('load', function () {
+	$$(document).on('click', 'a[target="_blank"]', function (e) {
+	e.preventDefault();
+	var url = this.href;
+	window.open(url, "_system", "toolbarposition=top");
+	});
+	//}	
+	}, false);
+
 
 $$.getJSON('http://battlebrotherhood.ru/api/core/get_category_posts/?id=2/?count=15', function (data) {
 
@@ -108,15 +122,3 @@ $$(document).on('refresh','.pull-to-refresh-content',function(e){
     location.reload();
   },500);
 });
-
-
-
-//social links
-window.addEventListener('load', function () {
-	$$(document).on('click', 'a[target="_blank"]', function (e) {
-	e.preventDefault();
-	var url = this.href;
-	window.open(url, "_system");
-	});
-	//}	
-	}, false);
