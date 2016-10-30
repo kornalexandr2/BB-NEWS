@@ -25,9 +25,7 @@ ios-CFBundleVersion="1.0.3">
 	
 
 	
-<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
-<plugin name="InAppBrowser" value="CDVInAppBrowser" /> 
-<access origin="*" browserOnly="true"/>
+<plugin name="cordova-plugin-InAppBrowser" spec="1.5.0" />
 	
 	
     <platform name="android">
