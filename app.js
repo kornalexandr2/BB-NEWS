@@ -8,20 +8,19 @@ var myApp = new Framework7();
 var $$ = Dom7;
 
 
+//social links
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     window.open = cordova.InAppBrowser.open;
 }
-
-//social links
-window.addEventListener('load', function () {
-	$$(document).on('click', 'a[target="_blank"]', function (e) {
-	e.preventDefault();
-	var url = this.href;
-	window.open(url, "_system", "toolbarposition=top");
-	});
-	//}	
-	}, false);
+window.addEventListener('load', function () {    
+    $(document).on('click', 'a[target="_system"],a[target="_blank"]', function (e) {
+            e.preventDefault();
+            var url = this.href;
+            window.open(url,"_system");                    
+    });
+  //}
+}, false);
 
 
 $$.getJSON('http://battlebrotherhood.ru/api/core/get_category_posts/?id=2/?count=15', function (data) {
