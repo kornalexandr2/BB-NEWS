@@ -25,8 +25,10 @@ ios-CFBundleVersion="1.0.3">
 	
 
 	
-<plugin name="org.li8.inappbrowser" spec="0.1" source="pgb" />
-	
+<!--<plugin name="org.li8.inappbrowser" spec="0.1" source="pgb" />-->
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="org.li8.inappbrowser"
+      version="0.1">
 	
     <platform name="android">
         <preference name="android-minSdkVersion" value="14" />
