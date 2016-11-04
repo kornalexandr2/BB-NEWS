@@ -14,12 +14,11 @@ function onDeviceReady() {
     window.open = cordova.InAppBrowser.open;
 }
 window.addEventListener('load', function () {    
-    $(document).on('click', 'a[target="_system"],a[target="_blank"]', function (e) {
+    $$(document).on('click', 'a[target="_system"],a[target="_blank"]', function (e) {
             e.preventDefault();
             var url = this.href;
             window.open(url,"_system");                    
     });
-  //}
 }, false);
 
 
