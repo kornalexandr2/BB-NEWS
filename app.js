@@ -1,12 +1,12 @@
 var myApp = new Framework7(); 
 
-
+var allphot = [];
 
 
 
 // Export selectors engine
 var $$ = Dom7;
-
+var page = 1;
 
 //social links
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -19,45 +19,71 @@ window.addEventListener('load', function () {
             var url = this.href;
             window.open(url,"_system");                    
     });
-}, false);
+	
+}, 
+
+ false);
+
+var FB = '<li><a class="external link" target="_blank" href="http://www.facebook.com/boewoebratstwo/" ><img src="soc_img/fb.png"/></a></li>'
+$$(FB).on('click', function () {
+window.open(FB, '_system');
+});
+$$('.ss_l').append(FB);
 
 
-$$.getJSON('http://battlebrotherhood.ru/api/core/get_category_posts/?id=2/?count=15', function (data) {
+
+//var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+
+$$.getJSON('http://battlebrotherhood.ru/api/?json=get_category_posts&id=2', function (data) {
 
 	var output="<ul class='photo_content list-block' id='myid'>";
+	
     for (var i in data.posts) {
 
         output+="<li class='OneFeedInList' id="+data.posts[i].id+"><center><b><a class='pb-standalone-dark feed_title' href='#'>"+data.posts[i].title+"</b><br>";
         output+="<img src='"+ data.posts[i].thumbnail_images.medium.url + " ' /></center></a></li>";
-
+		
+		allphot [data.posts[i].id] = data.posts[i].url;
 
     }
 	
-    output+="</ul><p><a href='#' class='button button-fill color-blue NextClass'>далее</a></p>";
+    output+="</ul>";
     document.getElementById("placephoto").innerHTML=output;
+	//$$('placephoto').append(output) ;
 
-$$(".NextClass").click(function () {
-	$$.getJSON('http://battlebrotherhood.ru/api/core/get_category_posts/?id=2/?count=15?page=2', function (data) {
+var totpages = data.pages;
 
-	var output="<ul class='photo_content list-block' id='myid'>";
+$$(document).on('click', '.NextClass', function () {
+	
+	page=page+1;
+	
+	$$.getJSON('http://battlebrotherhood.ru/api/?json=get_category_posts&id=2&page='+page, function (data) {
+
+	var koutput="";
     for (var k in data.posts) {
 
-        koutput+="<li class='OneFeedInList' id="+data.posts[i].id+"><center><b><a class='pb-standalone-dark feed_title' href='#'>"+data.posts[i].title+"</b><br>";
-        koutput+="<img src='"+ data.posts[i].thumbnail_images.medium.url + " ' /></center></a></li>";
+        koutput+="<li class='OneFeedInList' id="+data.posts[k].id+"><center><b><a class='pb-standalone-dark feed_title' href='#'>"+data.posts[k].title+"</b><br>";
+        koutput+="<img src='"+ data.posts[k].thumbnail_images.medium.url + " ' /></center></a></li>";
 
 
     }
 	
-   koutput+="</ul><p><a href='#' class='button button-fill color-blue NextClass'>далее</a></p>";
+   // koutput+="</ul>";
     $$('.list-block ul').append(koutput);
+	
+	if  (page>=totpages) { 
+	$$('.NextClass').addClass('hide_btn');
+
+	}
 })
 });
 
-$$("#myid li").click(function() {
+$$(document).on('click','#myid li', function() {
   
 
-	qq = $$( this ).index();
+	qq = $$( this).attr("id");
 	console.log (qq);
+	console.log (allphot[qq]);
 	
 	
 });
@@ -96,7 +122,7 @@ console.log (phots);
 		
 		
 		//Video in YouTube chanel BattleBrothrhood
-	
+/*	
 		
 		$$.getJSON('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&controls=0&playlistId=UUKCzm_RjV_PDqV-k6sINuIg&key=AIzaSyDvPwsV6dAigO7Ogol8al10IbdsUoELbVs', function (data) {
 	
@@ -112,7 +138,7 @@ console.log (phots);
     document.getElementById("placevideo").innerHTML=output;
 	
 });
-
+*/
 	
 $$(document).on('refresh','.pull-to-refresh-content',function(e){
   setTimeout(function(){
