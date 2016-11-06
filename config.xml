@@ -25,7 +25,7 @@ ios-CFBundleVersion="1.0.3">
 	
 
 	
-<plugin name="cordova-plugin-openurlext" spec="1.0.1" />
+<plugin name="cordova-plugin-ortoo-safariviewcontroller" spec="1.4.0" />
 
 	
     <platform name="android">
