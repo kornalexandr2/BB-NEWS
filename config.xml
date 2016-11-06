@@ -25,7 +25,7 @@ ios-CFBundleVersion="1.0.3">
 	
 
 	
-<plugin name="com.phonegap.plugins.childbrowser" spec="5.0.0" source="pgb" />
+<plugin name="cordova-plugin-openurlext" spec="~1.0.0" />
 
 	
     <platform name="android">

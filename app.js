@@ -26,15 +26,26 @@ window.addEventListener('load', function () {
 
 var FB = '<li><a class="external link" target="_blank" href="#" ><img src="soc_img/fb.png"/></a></li>';
 $$(FB).on('click', function () {
-window.plugins.ChildBrowser.showWebPage('http://www.facebook.com/boewoebratstwo/',
-                                        { showNavigationBar: true });
+ OpenUrlExt.open('http://www.facebook.com/boewoebratstwo/',
+    				function(){ 
+    					console.log("ok");
+    				}, 
+    				function(){ 
+    					console.log("no");
+    				});
 
 });
 $$('.ss_l').append(FB);
 var VKurl = 'http://www.facebook.com/boewoebratstwo/';
 var VK = '<li><a class="external link" target="_blank" href="'+VKurl+'" ><img src="soc_img/fb.png"/></a></li>';
 $$(VK).on('click', function () {
-window.plugins.ChildBrowser.onOpenExternal = function (VKurl) {};
+ OpenUrlExt.open(VKurl,
+    				function(){ 
+    					console.log("ok");
+    				}, 
+    				function(){ 
+    					console.log("no");
+    				});
 });
 $$('.ss_r').append(VK);
 
