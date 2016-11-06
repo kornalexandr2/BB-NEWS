@@ -9,7 +9,7 @@ var $$ = Dom7;
 var page = 1;
 
 //social links
-document.addEventListener("deviceready", onDeviceReady, false);
+/*document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     window.open = cordova.InAppBrowser.open;
 }
@@ -22,13 +22,22 @@ window.addEventListener('load', function () {
 	
 }, 
 
- false);
+ false);*/
 
-var FB = '<li><a class="external link" target="_blank" href="http://www.facebook.com/boewoebratstwo/" ><img src="soc_img/fb.png"/></a></li>'
+var FB = '<li><a class="external link" target="_blank" href="#" ><img src="soc_img/fb.png"/></a></li>';
 $$(FB).on('click', function () {
-window.open(FB, '_system');
+window.plugins.ChildBrowser.showWebPage('http://www.facebook.com/boewoebratstwo/',
+                                        { showNavigationBar: true });
+
 });
 $$('.ss_l').append(FB);
+var VKurl = 'http://www.facebook.com/boewoebratstwo/';
+var VK = '<li><a class="external link" target="_blank" href="'+VKurl+'" ><img src="soc_img/fb.png"/></a></li>';
+$$(VK).on('click', function () {
+window.plugins.ChildBrowser.onOpenExternal = function (VKurl) {};
+});
+$$('.ss_r').append(VK);
+
 
 
 
