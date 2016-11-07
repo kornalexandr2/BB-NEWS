@@ -46,6 +46,14 @@
 .page {
     background-color: #e0eaff !important;
 }
+.NextClass {
+	background-color:#568098 !important;
+	font-weight:bolder;
+}
+.NextVideoClass {
+	background-color:#568098 !important;
+	font-weight:bolder;
+}
 
 /* Tab bar icons */
 i.tabbar-demo-icon-1 {
@@ -120,17 +128,15 @@ i.tabbar-demo-icon-9 {
 .OneFeedInList {
 	background-color: #e0eaff;
 	border-top:#365673 solid;
-	padding-top:0.85em;
-	padding:0.1em;
+	max-width:100%;
+	overflow:hidden;
+
 }
 .OneFeedInList a {
 	color:rgba(6,0,87,1.00) !important;
 }
 .OneFeedInList {
 	color:rgba(6,0,87,1.00) !important;
-}
-embed {
-	margin:0 7px;
 }
 .refresh {
 	width:25px !important;
@@ -236,6 +242,10 @@ embed {
 	height:100%;
 	display:block;
 }
+.hide_btn {
+	display:none;
+}
+
 
   
 
